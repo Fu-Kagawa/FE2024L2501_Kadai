@@ -13,13 +13,15 @@ new Vue({
     addTodo() {
       if (!this.text) return;
 
-      const newTodo = {
-        id: Math.ceil(Math.random() * 1000),
-        text: this.text,
+      const text = this.text;
+      const id = Math.ceil(Math.random() * 1000);
+      const todo = {
+        id,
+        text,
         isDone: false,
         isStock: false
       };
-      this.todos.push(newTodo);
+      this.todos.push(todo);
       this.resetText();
     },
     resetText() {
